@@ -1,0 +1,11 @@
+.Form-message {
+}
+.Form-message input {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #212121;
+  color: white;
+  border: none;
+  outline: none;
+}
