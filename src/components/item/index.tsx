@@ -1,17 +1,15 @@
 interface IItemProps {
   text: string
-  time: string
-  bg: string
+
   pos: "left" | 'right'
 }
 import './style.css'
 
-function Item({ text, time }: IItemProps) {
+function Item({ text, pos }: IItemProps) {
   return (
-    <div className='Item' >
-      <span className='Item-text'>{text}</span>
-      <span className='Item-time'>{time}</span>
-    </div>
+    <li className={`Item Item-${pos}`} >
+      {text}
+    </li>
   )
 }
 export default Item

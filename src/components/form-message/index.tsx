@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "./style.css"
+import { IoMdSend } from "react-icons/io";
 interface IFormMessage {
     cb: (text: string) => void,
+    placeholder: string
+
 }
-function FormMessage({ cb }: IFormMessage) {
+function FormMessage({ cb, placeholder }: IFormMessage) {
 
     const [value, setValue] = useState("")
 
@@ -13,13 +16,20 @@ function FormMessage({ cb }: IFormMessage) {
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        cb(value)
+        if (value.trim() !== "") {
+            cb(value)
+            setValue("")
+        }
+
     }
 
     return (
         <form className="Form-message" onSubmit={handleSubmit}>
-            <input type="text" value={value} onChange={handleChange} placeholder="Сообщение" />
-            <input type="submit" />
+            <input type="text" value={value} onChange={handleChange} placeholder={placeholder} />
+            <label ><IoMdSend size={20} />
+                <input type="submit" />
+            </label>
+
         </form>
     )
 }

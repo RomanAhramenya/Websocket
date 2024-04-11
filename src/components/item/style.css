@@ -1,0 +1,15 @@
+.Item {
+  width: max-content;
+  padding: 5px 20px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+.Item-right {
+  margin-left: auto;
+  text-align: end;
+  background-color: #766ac8;
+}
+.Item-left {
+  background-color: #212121;
+}
